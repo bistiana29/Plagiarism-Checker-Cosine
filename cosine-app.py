@@ -6,9 +6,13 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import nltk
 
-# Download NLTK resources
-nltk.download('stopwords')
-nltk.download('punkt')
+@st.cache_resource
+def download_nltk_resources():
+    nltk.download('punkt')
+    nltk.download('stopwords')
+
+# Panggil fungsi ini di awal
+download_nltk_resources()
 
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
