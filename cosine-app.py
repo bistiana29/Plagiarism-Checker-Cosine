@@ -1,18 +1,14 @@
 import re
 import time
+import openpyxl
 import numpy as np
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 import nltk
 
-@st.cache_resource
-def download_nltk_resources():
-    nltk.download('punkt')
-    nltk.download('stopwords')
-
-# Panggil fungsi ini di awal
-download_nltk_resources()
+nltk.download('punkt')
+nltk.download('stopwords')
 
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
